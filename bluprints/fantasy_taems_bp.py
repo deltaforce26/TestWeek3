@@ -58,5 +58,10 @@ def delete_team(team_id):
 
 @fantasy_teams_bp.route('/teams/<int:team_id>', methods=['GET'])
 def get_team(team_id):
-    pass
+    if team_id < 1:
+        return jsonify({'error': 'invalid team id'}), 400
+    team = FantasyTeam.query.get(team_id)
+    if not team:
+        return jsonify({'error': 'team not found'}), 404
+    return jsonify(team.to_dict()), 200
 

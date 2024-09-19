@@ -25,10 +25,8 @@ class Player_stats(db.Model):
         return {
             'id': self.id,
             'name': self.name,
-            'age': self.age,
             'team': self.team,
             'position': self.position,
-            'season': self.season,
             'points': self.points,
             'games': self.games,
             'two_percent': self.two_percent,

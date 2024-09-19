@@ -4,7 +4,7 @@ from bluprints.players_bp import players_bp
 from bluprints.stats_bp import stats_bp
 from db import db
 from services.api_service import get_player_stats
-from services.calc_sevice import atr_calc
+from services.calc_service import atr_calc
 
 app = Flask(__name__)
 
@@ -29,6 +29,8 @@ with app.app_context():
     get_player_stats('2023')
     print("Fetching data for 2024...")
     get_player_stats('2024')
+
+
 
 
 
