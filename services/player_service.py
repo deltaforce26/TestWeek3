@@ -1,14 +1,13 @@
-from ..models.player import Player
-from ..db import db
+from models.player import Player
+from db import db
 
 
 
 def create_player(data: dict) -> dict:
     try:
         new_player = Player(
-            player_id=data['player_id'],
-            name=data['name'],
-            age=data['age']
+            player_id=data['playerId'],
+            name=data['playerName']
         )
         db.session.add(new_player)
         db.session.commit()
