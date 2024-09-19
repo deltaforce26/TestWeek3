@@ -7,6 +7,7 @@ class Player(db.Model):
     player_id = db.Column(db.Integer, nullable=False)
     name = db.Column(db.String(80), nullable=True)
     age = db.Column(db.Integer, nullable=True)
+    stats = db.relationship('Stats', back_populates='player')
 
 
     def to_dict(self):
