@@ -11,7 +11,7 @@ def create_player(data: dict) -> dict:
         )
         db.session.add(new_player)
         db.session.commit()
-        return new_player.to_dict()
+        return new_player.to_dict_with_players()
     except Exception as e:
         db.session.rollback()
         return {"error": str(e)}
